@@ -1,0 +1,88 @@
+import { useState, useRef } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+
+function App() {
+
+
+  const firstName = useRef("");
+  const lastName = useRef("");
+  const email = useRef("");
+  const password = useRef("");
+
+  const handleSubmit = ()=>{
+    console.log(firstName.current);
+    console.log(lastName.current);
+    console.log(email.current);
+    console.log(password.current);
+  }
+
+
+  return (
+    <>
+      <div className="Registration-container">
+        <div className="name">
+          <div>First Name</div>
+          <div>
+            <input ref={firstName} className="input" type="text" />
+          </div>
+        </div>
+        <div className="name">
+          <div>Last Name</div>
+          <div>
+            <input ref={lastName} className="input" type="text" />
+          </div>
+        </div>
+
+        <div className="name">
+          <div>E mail</div>
+          <div>
+            <input ref={email} className="input" type="email" />
+          </div>
+        </div>
+        <div className="name">
+          <div>Password</div>
+          <div>
+            <input ref={password} className="input" type="password" />
+          </div>
+        </div>
+        <div  className="submit">
+        <button onClick={()=>{handleSubmit()}} >Submit</button>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default App;
+
+
+.name{
+  display: flex;
+  justify-content: space-between;
+   max-width: 500px; 
+  margin: 30px 10px;
+  align-items: center
+}
+
+.Registration-container{
+  border: 1px solid black;
+  padding: 10px 10px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 200px;
+  height: auto;
+  margin: 200px auto;
+}
+
+.input {
+  padding: 10px ;
+  max-width: 500px;
+  flex-grow: 1;
+}
+
+.submit{
+  text-align: center;
+}
